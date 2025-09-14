@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre for Everything Education</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="university-form-container">
+  <h2>University Application Form</h2>
+  <form id="universityForm">
+    
+    <!-- Personal Details -->
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="surname">Surname *</label>
+    <input type="text" id="surname" name="surname" required>
+
+    <label for="title">Title *</label>
+    <select id="title" name="title" required>
+      <option value="">-- Select your title --</option>
+      <option value="advocate">Adv</option>
+      <option value="doctor">Dr</option>
+      <option value="mister">Mr</option>
+      <option value="missus">Mrs</option>
+      <option value="miss">Miss</option>
+      <option value="professor">Prof</option>
+        <option value="reverend">Rev</option>
+    </select>
+
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="idNumber">ID Number *</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <!-- Address -->
+    <label for="address">Address *</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <label for="maritalStatus">Marital Status *</label>
+    <select id="maritalStatus" name="maritalStatus" required>
+      <option value="">-- Select your marital status --</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>  
+    </select>
+
+    <h3>Next of kin </h3>
+    <label for="next-of-kin-name">Next of kin full name *</label>
+    <input type="text" id="next-of-kin-name" name="next-of-kin-name" required>  
+
+    <label for="next-of-kin-contact">Next of kin contact number *</label>
+    <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact" required>
+
+    <label for="next-of-kin-email">Next of kin email address *</label>
+    <input type="email" id="next-of-kin-email" name="next-of-kin-email" required>
+
+    <label for="relationship">Relationship to next of kin *</label>
+   <select id="relationship" name="relationship" required>
+      <option value="">-- Select your marital status --</option>
+      <option value="mother">Mother</option>
+      <option value="father">Father</option>
+      <option value="sibling">Sibling</option>
+      <option value="spouse">Spouse</option>
+      <option value="guardian">Guardian</option>
+    </select>
+
+
+    <!-- Academic Info -->
+    <label for="program">Program Applying For *</label>
+    <select id="program" name="program" required>
+      <option value="">-- Select a faculty --</option>
+      <option value="education">Education</option>
+      <option value="economic-and-management-sciences">Economic and Management Sciences</option>
+      <option value="engineering-and-the-built-environment">Engineering and the Built Environment</option>
+      <option value="health-sciences">Health Sciences</option>
+      <option value="humanities">Humanities</option>
+      <option value="law">Law</option>
+      <option value="natural-and-agricultural-sciences">Natural and Agricultural Sciences</option>  
+        <option value="science-and-technology">Science and Technology</option>  
+    </select>
+
+    <label for="qualification">Highest Qualification *</label>
+    <select id="qualification" name="qualification" required>
+      <option value="">-- Select your qualification --</option>
+      <option value="matric">Matric / High School</option>
+      <option value="diploma">Diploma</option>
+      <option value="degree">Degree</option>
+    </select>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+</body>
+</html>
