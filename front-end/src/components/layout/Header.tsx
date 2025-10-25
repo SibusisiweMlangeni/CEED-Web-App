@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <header className={`${scrolled ? "bg-white text-black shadow-md": "bg-transparent text-white"} fixed top-0 z-50 w-full`}>
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+      <div className="container mx-auto flex items-center justify-between px-6 py-4 outline-none">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
         {scrolled ? (
