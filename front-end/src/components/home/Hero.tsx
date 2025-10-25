@@ -1,5 +1,7 @@
 import React from "react";
 import hero from "@/images/banner/home/hero.webp";
+import Link from "next/link";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Hero = () => {
   return (
@@ -17,7 +19,7 @@ const Hero = () => {
           <span
             data-aos="fade-zoom-in"
             data-aos-delay="300"
-            className="text-[28px] block"
+            className="text-base mb-[15px] block md:text-[28px] md:mb-0"
           >
             Centre for Everything Education
           </span>
@@ -26,7 +28,7 @@ const Hero = () => {
           <h1
             data-aos="fade-up"
             data-aos-delay="200"
-            className="font-[myFont,sans-serif] text-[90px] leading-[1.1] max-md:text-[60px] max-sm:text-[42px]"
+            className="text-[38px] md:text-[90px] font-bold leading-[1.1]"
           >
             Empowering Learners for What Comes Next
           </h1>
@@ -35,7 +37,7 @@ const Hero = () => {
           <p
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-[20px] text-white w-[70%] mx-auto mb-[30px] max-md:w-[85%]"
+            className="text-sm md:text-xl text-white w-[70%] mx-auto mb-10 md:mb-[30px]"
           >
             CEED is your digital guide to opportunities beyond the classroom —
             helping South African learners, parents, and schools access real
@@ -49,32 +51,30 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <a
+            <Link
               href="/application-form"
-              className="bg-primary text-white font-semibold px-12 py-5 rounded-full hover:bg-yellow-400 transition"
+              className="bg-primary text-white text-sm font-semibold px-5 py-3 rounded-full transition md:text-base md:px-12 md:py-5"
             >
               Apply to CEED
-            </a>
-            <a
+            </Link>
+            {/* <a
               href="/contact-us"
               className="bg-white text-black font-semibold px-12 py-5 rounded-full hover:bg-gray-100 transition"
             >
               Chat with Us
-            </a>
+            </a> */}
           </div>
 
           {/* Scroll Down Icon */}
           <div
-            data-aos="fade-down"
-            data-aos-delay="100"
             className="mt-10 flex justify-center"
           >
-            <a
+            <Link
               href="#about"
-              className="inline-flex items-center justify-center text-[50px] bg-white/10 hover:bg-[var(--mainColor,#f5d36e)] text-white transition rounded-md h-[55px] w-[75px]"
+              className="inline-flex items-center justify-center text-[30px] md:text-[50px] bg-white/10 text-white transition rounded-md h-[55px] w-[75px]"
             >
-              <i className="bx bx-chevron-down" />
-            </a>
+              <FaChevronDown />
+            </Link>
           </div>
         </div>
       </div>
