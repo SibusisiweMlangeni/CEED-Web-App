@@ -52,24 +52,24 @@ export const offersGridData: OfferGridItem[] = [
     id: 1,
     image: offer1,
     title: "APS Calculator",
-    link: "/tools/aps-calculator",
+    link: "#",
   },
   {
     id: 2,
     image: offer2,
     title: "Apply to Multiple",
-    link: "/apply",
+    link: "#",
   },
   {
     id: 3,
     image: offer3,
     title: "Explore Study Paths",
-    link: "/explore",
+    link: "#",
   },
   {
     id: 4,
     image: offer4,
     title: "Bursaries & Guidance",
-    link: "/resources",
+    link: "#",
   },
 ];
