@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import '../styles/vendor/css/aos.css';
+import '../styles/vendor/css/bootstrap.min.css';
+import '../styles/vendor/css/boxicons.min.css';
+// import '../styles/vendor/css/owl.carousel.min.css';
+import '../styles/vendor/css/flaticon.css';
+import '../styles/vendor/css/magnific-popup.min.css';
+import '../styles/vendor/css/header.css';
+import '../styles/vendor/css/responsive.css';
+
 import "./globals.css";
+
+import TemplateScripts from "@/components/TemplateScripts";
 import Header from "../components/layout/Header";
 
 const geistSans = Geist({
@@ -31,6 +42,7 @@ export default async function RootLayout({
       >
         <Header />
         {children}
+        <TemplateScripts />
       </body>
     </html>
   );

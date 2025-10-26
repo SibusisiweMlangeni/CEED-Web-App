@@ -102,7 +102,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/contact"
-            className="rounded-full bg-primary px-12 py-5 text-white font-medium hover:bg-foreground transition"
+            className="rounded-full bg-primary px-12 py-2 text-white font-medium hover:bg-foreground transition"
           >
             Contact Us
           </Link>

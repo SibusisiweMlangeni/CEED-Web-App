@@ -1,4 +1,4 @@
-import About from "@/components/home/About";
+// import About from "@/components/home/About";
 import Hero from "@/components/home/Hero"
 
 export default async function HomePage() {
@@ -19,7 +19,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <div id="about" className="py-[60px] md:py-[100px]">
-        <About />
+        {/* <About /> */}
       </div>
       {/* <AboutUs content={about} />
       <Vision vision={vision} />
