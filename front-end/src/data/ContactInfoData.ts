@@ -20,15 +20,15 @@ export const contactInfo: ContactInfoData = {
 
 export const socialMediaLinks: SocialMediaLink[] = [
     {
-        url: "#",
+        url: "https://www.tiktok.com/@ceed.za?_t=ZS-8ze9yHsvYhh&_r=1",
         icon: FaFacebookF,
     },
     {
-        url: "#",
+        url: "https://www.instagram.com/ceed.za?igsh=cHJtd2RhNGl2amxh&utm_source=qr",
         icon: FaInstagram,
     },
     {
-        url: "#",
+        url: "https://www.tiktok.com/@ceed.za?_t=ZS-8ze9yHsvYhh&_r=1",
         icon: FaTiktok,
     },
 ]
