@@ -10,7 +10,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${hero.src})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#120f2d]/40" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
       <div className="relative container mx-auto max-w-[1100px] text-center text-white px-4">

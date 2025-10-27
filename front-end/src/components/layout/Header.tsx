@@ -61,7 +61,7 @@ export default function Header() {
               <div key={link.title} className="relative group">
                 <button
                   onClick={() => toggleDropdown(link.title)}
-                  className="flex items-center gap-1 text-base font-medium hover:text-primary transition"
+                  className="flex items-center gap-1 text-base font-medium hover:text-primary cursor-pointer transition"
                 >
                   {link.title}
                   <ChevronDown

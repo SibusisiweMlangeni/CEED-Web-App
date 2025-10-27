@@ -10,6 +10,7 @@ const About = () => {
             title="About CEED"
             subtitle="The Centre for Everything Education (CEED) exists to make applying
             for your future simpler, faster, and more informed."
+            subtitleColor='paragraph'
         />
 
         {/* Content */}
