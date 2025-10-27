@@ -17,28 +17,39 @@ const WhatWeDoSection = () => {
   const whatWeDoItems: WhatWeDoItem[] = [
     {
       id: 1,
-      title: "Education Services",
-      description: "There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form",
-      imageUrl: "/assets/img/icon/education-1.png",
+      title: "",
+      description: "Guide students through application processes online and in-person. We do this through digital platforms like WhatsApp and by visiting schools",
+      imageUrl: "/assets/img/icon/education-3.png",
       link: "/the-campus-experience",
       delay: 100,
+      active: true,
     },
     {
       id: 2,
-      title: "International Hubs",
-      description: "There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form",
-      imageUrl: "/assets/img/icon/education-2.png",
+      title: "",
+      description: "Share resources like prospectuses, bursary info, and deadlines.",
+      imageUrl: "/assets/img/icon/education-3.png",
       link: "/the-campus-experience",
       delay: 200,
       active: true,
     },
     {
       id: 3,
-      title: "Bachelor’s and Master’s",
-      description: "There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form",
+      title: "",
+      description: "Work with volunteers, schools, and partners to expand opportunities.",
       imageUrl: "/assets/img/icon/education-3.png",
       link: "/the-campus-experience",
       delay: 300,
+      active: true,
+    },
+    {
+      id: 4,
+      title: "",
+      description: "Promote education as a tool for transformation in our communities.",
+      imageUrl: "/assets/img/icon/education-3.png",
+      link: "/the-campus-experience",
+      delay: 300,
+      active: true,
     },
   ];
 
@@ -57,25 +68,25 @@ const WhatWeDoSection = () => {
           {whatWeDoItems.map((item) => (
             <div
               key={item.id}
-              className="col-lg-4 col-sm-6 col-md-6"
+              className="col-lg-3 col-sm-6 col-md-6"
             >
               <div
-                className={`academics-item ${item.active ? 'active' : ''}`}
+                className={`academics-item justify-center ${item.active ? 'active' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={item.delay}
               >
-                <Image
+                {/* <Image
                   src={item.imageUrl}
                   alt="icon"
                   width={60}
                   height={60}
                   className="img-fluid"
-                />
-                <h4>{item.title}</h4>
+                /> */}
+                {/* <h4>{item.title}</h4> */}
                 <p>{item.description}</p>
-                <Link href={item.link}>
+                {/* <Link href={item.link}>
                   Learn More <i className="bx bx-right-arrow-alt"></i>
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}

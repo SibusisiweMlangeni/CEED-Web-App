@@ -23,7 +23,6 @@ export default function Donate({ donateLink, preview = false }) {
           </a>
         </>
       ) : (
-        // Preview (homepage)
         <>
           <div className="mt-4">
             <Link

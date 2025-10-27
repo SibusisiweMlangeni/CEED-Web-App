@@ -29,7 +29,7 @@ const Donate = () => {
             <i className="bx bxs-graduation"></i>
             <p>Donate to our cause</p>
           </div>
-          <h2>Lorem ipsum dolor sit amet.</h2>
+          <h2>Your contribution will help us open doors to education and create brighter futures for every student.</h2>
         </div>
 
         <div className="subscribe-btn text-center" data-aos="fade-up" data-aos-delay="100">

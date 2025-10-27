@@ -11,7 +11,7 @@ export default async function AboutPage() {
     <div className="mt-[120px]">
          <SectionBanner
             title="About Us"
-            description="Clgun University is more than just a place of learning; it's a place where dreams take flight, where ideas flourish, and where you'll find the support and..."
+            description="At the Centre for Everything Education, we are dedicated to empowering students from all backgrounds by bridging the gap between them and the opportunities in higher education."
             backgroundImage="/img/section-image-1.png"
         />
 
