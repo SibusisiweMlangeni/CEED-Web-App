@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import '../styles/vendor/css/aos.css';
-import '../styles/vendor/css/bootstrap.min.css';
-import '../styles/vendor/css/boxicons.min.css';
-// import '../styles/vendor/css/owl.carousel.min.css';
-import '../styles/vendor/css/flaticon.css';
-import '../styles/vendor/css/magnific-popup.min.css';
-import '../styles/vendor/css/header.css';
-import '../styles/vendor/css/responsive.css';
-
+import { Geist, Geist_Mono, Lexend } from "next/font/google";
 import "./globals.css";
 
 import TemplateScripts from "@/components/TemplateScripts";
 import Header from "../components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +13,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const lexend = Geist_Mono({
+  variable: "--font-lexends",
   subsets: ["latin"],
 });
 
@@ -38,11 +35,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} antialiased`}
       >
         <Header />
         {children}
-        <TemplateScripts />
+        <Footer />
       </body>
     </html>
   );
