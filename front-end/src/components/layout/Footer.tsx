@@ -64,12 +64,14 @@ export default function Footer() {
             <ul className="flex gap-3">
               {socialMediaLinks.map((social, index) => (
                 <li key={index}>
-                  <Link
+                  <a
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-white text-black rounded-[2px] w-10 h-10 flex items-center justify-center text-xl hover:text-primary transition"
                   >
                     <social.icon />
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
