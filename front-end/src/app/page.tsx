@@ -1,6 +1,7 @@
 import About from "@/components/home/About";
 import Hero from "@/components/home/Hero"
 import WhatWeOffer from "@/components/home/WhatWeOffer";
+import Subscribe from "@/components/shared/Subscribe";
 
 export default async function HomePage() {
   // const [carousel, about, vision, mission, videos, footprint, donate, contact, stats] =
@@ -23,6 +24,7 @@ export default async function HomePage() {
         <About />
       </div>
       <WhatWeOffer />
+      <Subscribe />
       {/* <AboutUs content={about} />
       <Vision vision={vision} />
       <Mission mission={mission} />
