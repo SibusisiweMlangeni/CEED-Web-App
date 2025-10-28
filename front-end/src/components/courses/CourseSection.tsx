@@ -73,7 +73,8 @@ const CoursesSection = ({ courses }: CourseSectionProps) => {
                     <div className="course-item">
                       <div className="image">
                         <Image
-                          src={course.imageUrl}
+                          // src={course.imageUrl}
+                          src="/assets/img/all-img/courses-image-1.png"
                           alt={course.title}
                           width={370}
                           height={250}
@@ -123,7 +124,8 @@ const CoursesSection = ({ courses }: CourseSectionProps) => {
                         <div className="teacher-info">
                           <div className="image">
                             <Image
-                              src={course.teacherImageUrl}
+                              // src={course.teacherImageUrl}
+                              src="/assets/img/all-img/teacher-img.png"
                               alt="Teacher"
                               width={40}
                               height={40}

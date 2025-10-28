@@ -3,81 +3,75 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface Instructor {
-  name: string;
-  rating: number;
-  totalReviews: number;
-  students: number;
-  views: string;
-  bioLink: string;
-  avatar: string;
-}
+import { CourseDetailProps } from '@/data/CoursesData';
 
-interface CourseDetailProps {
-  category: string;
-  title: string;
-  instructor: Instructor;
-  date: string;
-  enrolledCount: number;
-  about: string;
-  description: string;
-  tags: string[];
-  objectives: string[];
-  materials: string[];
-  requirements: string[];
-  audience: string[];
-  videoThumbnail: string;
-  videoUrl: string;
-  price: string;
-  level: string;
-  duration: string;
-  subject: string;
-  language: string;
-}
+const CourseDetailsSection = ({ details }: { details: CourseDetailProps }) => {
+  const {
+    category,
+    title,
+    date = 'Not specified',
+    about,
+    description,
+    tags = [],
+    objectives = [],
+    materials = [],
+    requirements = [],
+    audience = [],
+    enrolledCount = 0,
+    videoThumbnail,
+    videoUrl,
+    level = 'Not specified',
+    duration = 'Not specified',
+    subject,
+    language = 'English',
+    mode = 'Online',
+    credits = 'N/A',
+    instructor,
+    price = 'Free',
+  } = details;
 
-const CourseDetailsSection = ({
-  category,
-  title,
-  instructor,
-  date,
-  enrolledCount,
-  about,
-  description,
-  tags,
-  objectives,
-  materials,
-  requirements,
-  audience,
-  videoThumbnail,
-  videoUrl,
-  price,
-  level,
-  duration,
-  subject,
-  language,
-}: CourseDetailProps) => {
+  const {
+    name: instructorName = 'Instructor',
+    rating: instructorRating = 0,
+    students: instructorStudents = 0,
+    views: instructorViews = '0',
+    bioLink = '#',
+    avatar = '/assets/img/all-img/teacher-img.png',
+  } = instructor ? instructor : {};
+
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }).map((_, i) => (
+      <li key={i}>
+        <i
+          className={`bx ${
+            i < Math.ceil(rating) ? 'bxs-star active' : 'bx-star'
+          }`}
+        ></i>
+      </li>
+    ));
+  };
+
   return (
     <div className="courses-details-section pt-100 pb-70">
       <div className="container">
         <div className="row">
-          {/* Main Content */}
           <div className="col-lg-8">
             <div className="courses-details">
-              {/* Header */}
               <div className="header-title">
                 <span>{category}</span>
                 <h2>{title}</h2>
                 <ul>
                   <li>
                     <Image
-                      src={instructor.avatar}
-                      alt={instructor.name}
+                      // src={avatar}
+                      src="/assets/img/all-img/teacher-img.png"
+                      alt={instructorName}
                       width={40}
                       height={40}
-                      className="avater" 
+                      className="avater"
                     />
                     <p>
-                      With <Link href={instructor.bioLink}>{instructor.name}</Link>
+                      With <Link href={bioLink}>{instructorName}</Link>
                     </p>
                   </li>
                   <li>
@@ -92,7 +86,11 @@ const CourseDetailsSection = ({
                     height={20}
                     className="ikon"
                   />
-                  <p>{enrolledCount} already enrolled</p>
+                  <p>
+                    {enrolledCount > 0
+                      ? `${enrolledCount} already enrolled`
+                      : 'Be the first to enroll!'}
+                  </p>
                 </div>
               </div>
 
@@ -104,94 +102,105 @@ const CourseDetailsSection = ({
                   <p>{about}</p>
                   <p>{description}</p>
 
-                  <div className="tag">
-                    <span>Tag:</span>
-                    <ul>
-                      {tags.map((tag, i) => (
+                  {tags.length > 0 && (
+                    <div className="tag">
+                      <span>Tag:</span>
+                      <ul>
+                        {tags.map((tag, i) => (
+                          <li key={i}>
+                            <Link href="#">{tag}</Link>
+                            {i < tags.length - 1 && ','}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {objectives.length > 0 && (
+                  <div className="content-pra">
+                    <div className="title">
+                      <h3>Learning Objectives</h3>
+                    </div>
+                    <ul className="lists">
+                      {objectives.map((obj, i) => (
                         <li key={i}>
-                          <Link href="#">{tag}</Link>
-                          {i < tags.length - 1 && ','}
+                          <div className="icon">
+                            <i className="bx bx-check"></i>
+                          </div>
+                          <p>{obj}</p>
                         </li>
                       ))}
                     </ul>
                   </div>
-                </div>
+                )}
 
-                <div className="content-pra">
-                  <div className="title">
-                    <h3>Learning Objectives</h3>
+                {materials.length > 0 && (
+                  <div className="content-pra">
+                    <div className="title">
+                      <h3>Material Includes</h3>
+                    </div>
+                    <ul className="lists">
+                      {materials.map((item, i) => (
+                        <li key={i}>
+                          <div className="icon">
+                            <i className="bx bx-check"></i>
+                          </div>
+                          <p>{item}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="lists">
-                    {objectives.map((obj, i) => (
-                      <li key={i}>
-                        <div className="icon">
-                          <i className="bx bx-check"></i>
-                        </div>
-                        <p>{obj}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
 
-                <div className="content-pra">
-                  <div className="title">
-                    <h3>Material Includes</h3>
+                {requirements.length > 0 && (
+                  <div className="content-pra">
+                    <div className="title">
+                      <h3>Requirements</h3>
+                    </div>
+                    <ul className="lists">
+                      {requirements.map((req, i) => (
+                        <li key={i}>
+                          <div className="icon">
+                            <i className="bx bx-check"></i>
+                          </div>
+                          <p>{req}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="lists">
-                    {materials.map((item, i) => (
-                      <li key={i}>
-                        <div className="icon">
-                          <i className="bx bx-check"></i>
-                        </div>
-                        <p>{item}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
 
-                <div className="content-pra">
-                  <div className="title">
-                    <h3>Requirements</h3>
+                {audience.length > 0 && (
+                  <div className="content-pra">
+                    <div className="title">
+                      <h3>Target Audience</h3>
+                    </div>
+                    <ul className="lists">
+                      {audience.map((item, i) => (
+                        <li key={i}>
+                          <div className="icon">
+                            <i className="bx bx-check"></i>
+                          </div>
+                          <p>{item}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="lists">
-                    {requirements.map((req, i) => (
-                      <li key={i}>
-                        <div className="icon">
-                          <i className="bx bx-check"></i>
-                        </div>
-                        <p>{req}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="content-pra">
-                  <div className="title">
-                    <h3>Target Audience</h3>
-                  </div>
-                  <ul className="lists">
-                    {audience.map((item, i) => (
-                      <li key={i}>
-                        <div className="icon">
-                          <i className="bx bx-check"></i>
-                        </div>
-                        <p>{item}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
               </div>
 
               <div className="instructor-card">
                 <div className="title">
-                  <h3>Your Instructors</h3>
+                  <h3>Your Instructor</h3>
                 </div>
                 <div className="row align-items-center">
                   <div className="col-lg-5 col-sm-6 col-md-5">
                     <div className="image">
                       <Image
-                        src={instructor.avatar}
-                        alt={instructor.name}
+                        // src={avatar}
+                        src="/assets/img/all-img/teacher-img.png"
+                        alt={instructorName}
                         width={200}
                         height={200}
                         className="img-fluid"
@@ -200,25 +209,13 @@ const CourseDetailsSection = ({
                   </div>
                   <div className="col-lg-7 col-sm-6 col-md-7">
                     <div className="content">
-                      <h3>{instructor.name}</h3>
+                      <h3>{instructorName}</h3>
                       <div className="review">
                         <div className="left">
-                          <ul>
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <li key={i}>
-                                <i
-                                  className={`bx ${
-                                    i < Math.ceil(instructor.rating)
-                                      ? 'bxs-star active'
-                                      : 'bx-star'
-                                  }`}
-                                ></i>
-                              </li>
-                            ))}
-                          </ul>
+                          <ul>{renderStars(instructorRating)}</ul>
                         </div>
                         <div className="rights">
-                          <p>Review {instructor.rating}/5</p>
+                          <p>Review {instructorRating}/5</p>
                         </div>
                       </div>
                       <ul>
@@ -231,7 +228,7 @@ const CourseDetailsSection = ({
                               height={16}
                             />
                           </div>
-                          <span>{instructor.students}</span>
+                          <span>{instructorStudents}</span>
                         </li>
                         <li>
                           <div className="image-circle">
@@ -242,7 +239,7 @@ const CourseDetailsSection = ({
                               height={16}
                             />
                           </div>
-                          <span>{instructor.views}</span>
+                          <span>{instructorViews}</span>
                         </li>
                         <li>
                           <div className="image-circle">
@@ -253,10 +250,10 @@ const CourseDetailsSection = ({
                               height={16}
                             />
                           </div>
-                          <span>{instructor.rating.toFixed(1)}</span>
+                          <span>{instructorRating.toFixed(1)}</span>
                         </li>
                       </ul>
-                      <Link href={instructor.bioLink}>See more</Link>
+                      <Link href={bioLink}>See more</Link>
                     </div>
                   </div>
                 </div>
@@ -268,15 +265,16 @@ const CourseDetailsSection = ({
             <div className="course-widget-area">
               <div className="image">
                 <Image
-                  src={videoThumbnail}
-                  alt="Course video"
+                  // src={videoThumbnail ? videoThumbnail : ""}
+                  src="/assets/img/all-img/course-video.png"
+                  alt="Course preview"
                   width={370}
                   height={250}
                   className="img-fluid"
                 />
                 <div className="play-btn">
                   <a
-                    href={videoUrl.trim()}
+                    href={videoUrl?.trim()}
                     className="popup-youtube"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -287,7 +285,7 @@ const CourseDetailsSection = ({
               </div>
               <div className="content">
                 <div className="pricing">
-                  <h4>{price}</h4>
+                  <h4>{typeof price === 'number' ? `$${price}` : price}</h4>
                 </div>
                 <ul>
                   <li>
@@ -305,6 +303,14 @@ const CourseDetailsSection = ({
                   <li>
                     <span>Language</span>
                     <p>{language}</p>
+                  </li>
+                  <li>
+                    <span>Mode</span>
+                    <p>{mode}</p>
+                  </li>
+                  <li>
+                    <span>Credits</span>
+                    <p>{credits}</p>
                   </li>
                 </ul>
                 <Link href="#" className="enroll-btn">

@@ -1,27 +1,34 @@
 import { Metadata } from "next";
 import CourseDetailsSection from "@/components/courses/CourseDetail";
 import { notFound } from 'next/navigation';
-import { Courses } from "@/data/CoursesData";
+import { Courses, FacultiesData } from "@/data/CoursesData";
+import { extractAllCourses } from "@/lib/utils";
 
 interface CoursePageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
+
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
+  const {id} = await params;
   return {
-    title: `Course: ${params.id}`,
+    title: `Course: ${id}`,
   };
 }
 
 export default async function CoursePage({ params }: CoursePageProps) {
-  const id = parseInt(params.id);
-  const course = Courses.find((c) => c.id === id);
+  const {id} = await params;
+  const idNum = parseInt(id);
 
-  if (!course) return notFound();
+  const allCourses = extractAllCourses(FacultiesData);
+
+  const course = allCourses.find((c) => c.id === idNum);
+
+  if (!course?.details) return notFound();
 
   return (
     <div className="mt-[120px]">
-      <CourseDetailsSection {...course.details} />
+      <CourseDetailsSection details={course.details} />
     </div>
   );
 }
