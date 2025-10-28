@@ -9,25 +9,6 @@ interface FacultiesSectionProps {
   menuItems: MenuFacultyItem[];
 }
 
-const getFacultyIcon = (facultyName: string): string => {
-  const name = facultyName.toLowerCase();
-  if (name.includes('humanities') || name.includes('arts') || name.includes('social')) return 'bx bx-book';
-  if (name.includes('science')) return 'bx bx-flask';
-  if (name.includes('engineering') || name.includes('built environment')) return 'bx bx-building';
-  if (name.includes('health') || name.includes('medicine')) return 'bx bx-heart';
-  if (name.includes('law')) return 'bx bx-gavel';
-  if (name.includes('commerce') || name.includes('business') || name.includes('economics')) return 'bx bx-bar-chart';
-  if (name.includes('education')) return 'bx bx-graduation';
-  if (name.includes('agricultural') || name.includes('environmental')) return 'bx bx-leaf';
-  if (name.includes('theology') || name.includes('religion')) return 'bx bx-cross';
-  if (name.includes('information') || name.includes('communication technology') || name.includes('ict')) return 'bx bx-laptop';
-  if (name.includes('design') || name.includes('architecture')) return 'bx bx-palette';
-  if (name.includes('veterinary')) return 'bx bx-paw';
-  if (name.includes('military')) return 'bx bx-shield';
-  if (name.includes('maritime') || name.includes('ocean')) return 'bx bx-water';
-  return 'bx bx-book'; // fallback
-};
-
 const FacultiesSection = ({menuItems}: FacultiesSectionProps) => {
   const createSlug = (name: string): string => {
     return name
@@ -54,7 +35,7 @@ const FacultiesSection = ({menuItems}: FacultiesSectionProps) => {
 
         <div className="row g-4">
             {menuItems.map((faculty, index) => (
-                <div className="col-lg-6" key={index}>
+                <div className="col-lg-4" key={index}>
                     <div className="card h-100 shadow-sm border-0 rounded-3">
                         <Link
                             href={`/faculties/${createSlug(faculty.name)}`}
