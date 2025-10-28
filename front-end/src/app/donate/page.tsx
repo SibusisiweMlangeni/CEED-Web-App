@@ -1,11 +1,8 @@
-import { fetchAPI } from "@/lib/api";
 import SectionBanner from "@/components/shared/Banner";
 
 import DonationsPage from "@/components/donate/DonatePage";
 
 export default async function DonatePage() {
-  const donate = await fetchAPI("/donate").catch(() => null);
-
   return (
     <div className="p-8 text-center mt-[120px]">
       <SectionBanner 

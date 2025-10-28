@@ -1,6 +1,7 @@
 import React from "react";
 import SectionBanner from "@/components/shared/Banner";
 import CoursesSection from "@/components/courses/CourseSection";
+import { Courses } from "../../data/CoursesData";
 
 export default async function CoursesPage() {
     return (
@@ -11,7 +12,7 @@ export default async function CoursesPage() {
                 backgroundImage="/img/section-image-1.png"
             />
 
-            <CoursesSection />
+            <CoursesSection courses={Courses} />
         </div>
     )
 }

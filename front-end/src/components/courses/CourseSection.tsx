@@ -3,19 +3,19 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Course } from '@/data/CoursesData';
 
-import { Courses } from "../../data/CoursesData";
+interface CourseSectionProps {
+  courses: Course[];
+}
 
-const CoursesSection = () => {
-   const courses = Courses;
-
+const CoursesSection = ({ courses }: CourseSectionProps) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [priceFilter, setPriceFilter] = useState<string>("All");
   const [ratingFilter, setRatingFilter] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const coursesPerPage = 6;
 
-  // Filter and paginate
   const filteredCourses = useMemo(() => {
     return courses.filter((course) => {
       const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -50,7 +50,6 @@ const CoursesSection = () => {
     <div className="courses-section pt-100 pb-70">
       <div className="container">
         <div className="row">
-          {/* Main Courses List */}
           <div className="col-lg-8">
             <div className="grid-sorting">
               <div className="row align-items-center">
@@ -84,7 +83,7 @@ const CoursesSection = () => {
                       <div className="content">
                         <span>{course.date}</span>
                         <h2>
-                          <Link href="#">{course.title}</Link>
+                          <Link href={`/courses/${course.id}`}>{course.title}</Link>
                         </h2>
                         <ul>
                           <li>
@@ -149,7 +148,6 @@ const CoursesSection = () => {
               )}
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
               <div className="blog-pagi">
                 <ul className="pagination">
@@ -192,10 +190,8 @@ const CoursesSection = () => {
             )}
           </div>
 
-          {/* Sidebar Filters */}
           <div className="col-lg-4">
             <div className="widget-area">
-              {/* Search */}
               <div className="widget widget-search">
                 <h3 className="widget-title">Search</h3>
                 <form className="search-form" onSubmit={handleSearchSubmit}>

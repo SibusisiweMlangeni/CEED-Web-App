@@ -1,5 +1,3 @@
-
-// Instructor for a course
 export interface Instructor {
   name: string;
   rating: number;
@@ -10,7 +8,6 @@ export interface Instructor {
   avatar: string;
 }
 
-// Detailed course information
 export interface CourseDetailProps {
   category: string;
   title: string;
@@ -33,7 +30,6 @@ export interface CourseDetailProps {
   language: string;
 }
 
-// Main course card structure
 export interface Course {
   id: number;
   title: string;
@@ -47,35 +43,6 @@ export interface Course {
   teacherImageUrl: string;
   details: CourseDetailProps;
 }
-
-
-// export const Courses: Course[] = [
-//     { id: 1, category: "", title: "Environmental Science and Sustainability", date: "October 4, 2024", students: "432", views: "1.2k", rating: "5.0", teacher: "Anthony Steven", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 2, category: "", title: "Introduction to Computer Science", date: "October 15, 2024", students: "874", views: "3.7k", rating: "4.5", teacher: "Sarah Johnson", price: "$120", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 3, category: "", title: "Modern Art History", date: "October 22, 2024", students: "290", views: "2.1k", rating: "4.8", teacher: "Michael Brown", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 4, category: "", title: "Principles of Economics", date: "October 8, 2024", students: "512", views: "1.9k", rating: "4.3", teacher: "Emily Davis", price: "$75", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 5, category: "", title: "Data Structures & Algorithms", date: "October 19, 2024", students: "621", views: "2.8k", rating: "4.9", teacher: "David Wilson", price: "$150", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 6, category: "", title: "Digital Marketing Fundamentals", date: "October 12, 2024", students: "398", views: "1.5k", rating: "4.6", teacher: "Olivia Martinez", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 7, category: "", title: "Creative Writing Workshop", date: "October 27, 2024", students: "245", views: "1.1k", rating: "4.2", teacher: "James Taylor", price: "$90", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 8, category: "", title: "Physics for Engineers", date: "October 6, 2024", students: "512", views: "2.6k", rating: "4.7", teacher: "Sophia Anderson", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 9, category: "", title: "Psychology of Human Behavior", date: "October 21, 2024", students: "631", views: "3.2k", rating: "4.9", teacher: "William Thomas", price: "$110", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 10, category: "", title: "Global Politics and Society", date: "October 14, 2024", students: "489", views: "2.0k", rating: "4.4", teacher: "Emma Moore", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.pngg", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 11, category: "", title: "Artificial Intelligence Basics", date: "October 3, 2024", students: "754", views: "4.1k", rating: "4.8", teacher: "Anthony Steven", price: "$200", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 12, category: "", title: "Blockchain and Cryptocurrency", date: "October 9, 2024", students: "389", views: "2.3k", rating: "4.5", teacher: "Sarah Johnson", price: "$180", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 13, category: "", title: "Sustainable Architecture", date: "October 20, 2024", students: "274", views: "1.4k", rating: "4.7", teacher: "Michael Brown", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 14, category: "", title: "Human-Computer Interaction", date: "October 16, 2024", students: "512", views: "2.7k", rating: "4.6", teacher: "Emily Davis", price: "$130", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 15, category: "", title: "Financial Planning Essentials", date: "October 5, 2024", students: "432", views: "1.8k", rating: "4.3", teacher: "David Wilson", price: "$95", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 16, category: "", title: "Photography Masterclass", date: "October 18, 2024", students: "391", views: "1.6k", rating: "4.9", teacher: "Olivia Martinez", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 17, category: "", title: "Web Development Bootcamp", date: "October 11, 2024", students: "712", views: "3.5k", rating: "4.8", teacher: "James Taylor", price: "$140", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 18, category: "", title: "Music Theory for Beginners", date: "October 23, 2024", students: "268", views: "1.2k", rating: "4.4", teacher: "Sophia Anderson", price: "$60", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 19, category: "", title: "Entrepreneurship 101", date: "October 2, 2024", students: "543", views: "2.9k", rating: "4.7", teacher: "William Thomas", price: "$150", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 20, category: "", title: "Creative Coding", date: "October 26, 2024", students: "321", views: "1.5k", rating: "4.5", teacher: "Emma Moore", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.pngg", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 21, category: "", title: "Machine Learning Essentials", date: "October 7, 2024", students: "688", views: "3.8k", rating: "4.9", teacher: "Anthony Steven", price: "$210", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 22, category: "", title: "Nutrition and Wellness", date: "October 13, 2024", students: "312", views: "1.7k", rating: "4.6", teacher: "Sarah Johnson", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 23, category: "", title: "Astrophysics for Everyone", date: "October 17, 2024", students: "256", views: "1.3k", rating: "4.8", teacher: "Michael Brown", price: "$100", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 24, category: "", title: "Yoga and Mindfulness", date: "October 10, 2024", students: "398", views: "2.0k", rating: "4.5", teacher: "Emily Davis", price: "Free", imageUrl: "/assets/img/all-img/courses-image-1.png", teacherImageUrl: "/assets/img/all-img/teacher-img.png" },
-//     { id: 25, category: "", title: "Creative Problem Solving", date: "October 25, 2024", students: "431", views: "2.2k", rating: "4.7", teacher: "David Wilson", price: "$125", imageUrl: "/assets/img/all-img/courses-image-1.pngg", teacherImageUrl: "/assets/img/all-img/teacher-img.png" }
-// ];
 
 export const Courses: Course[] = [
   {

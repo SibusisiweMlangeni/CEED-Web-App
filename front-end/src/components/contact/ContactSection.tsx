@@ -27,8 +27,6 @@ const ContactSection = () => {
     setSubmitStatus('idle');
 
     try {
-      // Replace this with your actual form submission logic
-      // e.g., fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
       console.log('Form submitted:', formData);
       setSubmitStatus('success');
       setFormData({
@@ -39,7 +37,6 @@ const ContactSection = () => {
         inquiryType: 'Admission',
         message: '',
       });
-      // Reset after 3 seconds
       setTimeout(() => setSubmitStatus('idle'), 3000);
     } catch (error) {
       console.error('Submission error:', error);
@@ -53,7 +50,6 @@ const ContactSection = () => {
     <div className="contact-area ptb-100">
       <div className="container">
         <div className="row">
-          {/* Contact Form */}
           <div className="col-lg-8">
             <div className="contact-content">
               <div className="header-content">
@@ -234,22 +230,6 @@ const ContactSection = () => {
               {/* Contact Details */}
               <div className="info-details">
                 <ul>
-                  {/* <li>
-                    <i className="bx bxs-phone-call"></i> General Inquiries -{' '}
-                    <a href="tel:+8495160885">(000) 000-0000</a>
-                  </li>
-                  <li>
-                    <i className="bx bxs-phone-call"></i> Enrollment Inquiries -{' '}
-                    <a href="tel:+18554750885">+27 000-000000</a>
-                  </li>
-                  <li>
-                    <i className="bx bxs-phone-call"></i> Financial Inquiries -{' '}
-                    <a href="tel:+18554750885">(000) 000-000</a> (Option 4)
-                  </li>
-                  <li>
-                    <i className="bx bxs-phone-call"></i> Student Account Inquiries -{' '}
-                    <a href="tel:+18554750885">(000) 000-000</a> (Option 5)
-                  </li> */}
                   <li>
                     <i className="bx bxs-map"></i> Our address, Gautent, South Africa, 0000
                   </li>

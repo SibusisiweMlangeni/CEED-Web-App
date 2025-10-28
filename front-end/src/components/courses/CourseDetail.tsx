@@ -3,13 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Types
 interface Instructor {
   name: string;
   rating: number;
   totalReviews: number;
   students: number;
-  views: string; // e.g., "1.2k"
+  views: string;
   bioLink: string;
   avatar: string;
 }
@@ -29,7 +28,7 @@ interface CourseDetailProps {
   audience: string[];
   videoThumbnail: string;
   videoUrl: string;
-  price: string; // e.g., "$0", "$120"
+  price: string;
   level: string;
   duration: string;
   subject: string;
@@ -75,7 +74,7 @@ const CourseDetailsSection = ({
                       alt={instructor.name}
                       width={40}
                       height={40}
-                      className="avater"
+                      className="avater" 
                     />
                     <p>
                       With <Link href={instructor.bioLink}>{instructor.name}</Link>
@@ -97,9 +96,7 @@ const CourseDetailsSection = ({
                 </div>
               </div>
 
-              {/* Course Content */}
               <div className="content">
-                {/* About This Course */}
                 <div className="content-pra">
                   <div className="title">
                     <h3>About This Course</h3>
@@ -112,14 +109,14 @@ const CourseDetailsSection = ({
                     <ul>
                       {tags.map((tag, i) => (
                         <li key={i}>
-                          <Link href="#">{tag}{i < tags.length - 1 ? ',' : ''}</Link>
+                          <Link href="#">{tag}</Link>
+                          {i < tags.length - 1 && ','}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                {/* Learning Objectives */}
                 <div className="content-pra">
                   <div className="title">
                     <h3>Learning Objectives</h3>
@@ -136,7 +133,6 @@ const CourseDetailsSection = ({
                   </ul>
                 </div>
 
-                {/* Material Includes */}
                 <div className="content-pra">
                   <div className="title">
                     <h3>Material Includes</h3>
@@ -153,7 +149,6 @@ const CourseDetailsSection = ({
                   </ul>
                 </div>
 
-                {/* Requirements */}
                 <div className="content-pra">
                   <div className="title">
                     <h3>Requirements</h3>
@@ -170,7 +165,6 @@ const CourseDetailsSection = ({
                   </ul>
                 </div>
 
-                {/* Target Audience */}
                 <div className="content-pra">
                   <div className="title">
                     <h3>Target Audience</h3>
@@ -188,7 +182,6 @@ const CourseDetailsSection = ({
                 </div>
               </div>
 
-              {/* Instructor Card */}
               <div className="instructor-card">
                 <div className="title">
                   <h3>Your Instructors</h3>
@@ -215,8 +208,8 @@ const CourseDetailsSection = ({
                               <li key={i}>
                                 <i
                                   className={`bx ${
-                                    i < Math.floor(instructor.rating)
-                                      ? 'bxs-star'
+                                    i < Math.ceil(instructor.rating)
+                                      ? 'bxs-star active'
                                       : 'bx-star'
                                   }`}
                                 ></i>
@@ -271,7 +264,6 @@ const CourseDetailsSection = ({
             </div>
           </div>
 
-          {/* Sidebar Widget */}
           <div className="col-lg-4">
             <div className="course-widget-area">
               <div className="image">
@@ -284,7 +276,7 @@ const CourseDetailsSection = ({
                 />
                 <div className="play-btn">
                   <a
-                    href={videoUrl}
+                    href={videoUrl.trim()}
                     className="popup-youtube"
                     target="_blank"
                     rel="noopener noreferrer"

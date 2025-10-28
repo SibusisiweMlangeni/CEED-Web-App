@@ -1,13 +1,10 @@
 'use client';
-
 import Image from 'next/image';
-import Link from 'next/link';
 
 const DonationsPage = () => {
   return (
     <div className="donations-page">
       <div className="container">
-        {/* Banner / Header */}
         <div className="section-banner bg-1 mb-5">
           <div className="banner-spacing text-center">
             <h1 data-aos="fade-up">Support Our Mission</h1>
@@ -74,23 +71,9 @@ const DonationsPage = () => {
                   />
                 </div>
               </div>
-              {/* <div className="col-12">
-                <div className="notice-content bg-light p-4 rounded" data-aos="fade-left" data-aos-delay="100">
-                  <i className="bx bxs-quote-left text-primary"></i>
-                  <h4 className="title-anim">"Education is the most powerful weapon which you can use to change the world."</h4>
-                  <p className="title-anim mb-3">— Nelson Mandela</p>
-                  <div className="text-center">
-                    <Link href="#" className="default-btn">
-                      Donate Now
-                    </Link>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
-
-        {/* Impact Stats */}
         <div className="row mt-70 text-center" data-aos="fade-up">
           <div className="col-md-4">
             <div className="counter-item">
